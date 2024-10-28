@@ -10,9 +10,13 @@ Input Data
 The input can be provided via a text file or through standard input if the file is not specified. The input data consists of:
 
 First line: Integer n indicating the number of pastry-cooks in the shop.
+
 Second line: Integer m indicating the number of different types of pastries offered.
+
 Third line: Sequence of orders with n values separated by a hyphen (-), where each value indicates the type of pastry for each order.
+
 Next n lines: A cost matrix C[1..n,1..m] where the value c_ij represents the cost of pastry-cook i making pastry j. Values in the cost matrix are separated by a space.
+
 Example:
 
 For a pastry shop with 5 pastry-cooks and 3 types of pastries, receiving 5 orders of types [1-1-3-2-1], the input file would look like:
@@ -31,10 +35,15 @@ Implementation Details
 The solution uses a Branch and Bound algorithm with min-heaps and a custom data structure called Node. Each Node stores the following information:
 
 int[] pasteleros: An array representing the assignment of pastry-cooks.
+
 boolean[] asignados: Indicates whether a pastry-cook has already been assigned an order.
+
 int ultimoPedido: The last processed order.
+
 int costeTotal: The total cost of the current assignment.
+
 int estimacionOptimista: An optimistic estimate of the cost for this assignment.
+
 
 Execution
 
@@ -49,9 +58,13 @@ java -jar pasteleria.jar [-t][-h] [input_file] [output_file]
 
 Arguments
 -t: Traces each step of the algorithm, showing the application of the Branch and Bound technique.
+
 -h: Displays help information and command syntax.
+
 input_file: The name of the file containing the input data (orders and cost matrix).
+
 output_file: The name of the file where the output will be saved. If this file already exists, an error is thrown. If this argument is missing, the program prints the results to the console.
+
 
 Example Command
 bash
